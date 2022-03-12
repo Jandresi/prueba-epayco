@@ -1,10 +1,13 @@
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-
-import tokenReducer from './epaycoDucks';
+import tokenReducer from './tokenDucks';
+import configReducer from './configDucks';
+import facturaReducer from './facturaDucks';
 
 const rootReducer = combineReducers({
-    token: tokenReducer
+    token: tokenReducer,
+    config: configReducer,
+    factura: facturaReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -1,6 +1,6 @@
 // Constantes
 const tokenInicial = {
-    token: ''
+    token: '',
 }
 
 const GET_TOKEN = 'GET_TOKEN'
@@ -9,7 +9,7 @@ const GET_TOKEN = 'GET_TOKEN'
 export default function tokenReducer(state = tokenInicial, action) {
     switch(action.type) {
         case GET_TOKEN:
-            return {token: action.payload}
+            return {...state, token: action.payload}
         default:
             return state
     }

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getTokenAccion } from "../../Redux/epaycoDucks";
 import './FormFacturas.css'
+import { useDispatch, useSelector } from "react-redux";
+import { getTokenAccion } from "../../Redux/tokenDucks";
+import { getConfigAccion } from "../../Redux/configDucks";
+import { getFacturaAccion } from "../../Redux/facturaDucks";
 
 const FormFacturas = () => {
     
@@ -19,7 +21,8 @@ const FormFacturas = () => {
 
     const submit = (event) =>{
         event.preventDefault();
-        console.log(datos.numero + ' ' + datos.token)
+        dispatch(getConfigAccion(getToken, datos.numero));
+        dispatch(getFacturaAccion(getToken, datos.numero));
     }
 
     const handleInputChange = (event) => {
