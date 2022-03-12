@@ -1,0 +1,21 @@
+.formulario {
+    padding: 20px 30px;
+}
+
+.titulo {
+    text-align: center;
+    color: #9da8c8;
+    font-weight: 400;
+    padding-bottom: 50px;
+}
+
+.label {
+    color: #636774;
+    padding-bottom: 5px;
+}
+
+.boton-accion {
+    margin: 30px 0 0 0;
+    padding: 10px 0;
+    width: 100%;
+}
