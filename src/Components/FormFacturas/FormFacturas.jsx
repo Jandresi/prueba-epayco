@@ -1,15 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getTokenAccion } from "../../Redux/epaycoDucks";
 import './FormFacturas.css'
 
 const FormFacturas = () => {
-
+    
     const dispatch = useDispatch();
+    const getToken = useSelector(store => store.token.token)
+
+    const[cambio, setCambio] = useState(false);
+
+    const[datos, setDatos] = useState({
+        numero: '',
+        token: 'token'
+    });
+    
+    useEffect(() => {
+        dispatch(getTokenAccion());
+    }, [])
 
     const submit = (event) =>{
         event.preventDefault();
-        dispatch(getTokenAccion());
+        console.log(datos.numero + ' ' + datos.token)
+    }
+
+    const handleInputChange = (event) => {
+        setDatos({
+            ...datos,
+            [event.target.name]: event.target.value,
+            token: getToken
+        });
+        setCambio(true);
     }
 
 
@@ -20,8 +41,14 @@ const FormFacturas = () => {
         </div>
         <div>
             <label className="label">Número de identificación del usuario</label>
-            <form method="post" onSubmit={submit}>
-                <input type="text" name="id" id="id" maxLength={500} className='form-control' />
+            <form method="post" onSubmit={submit} autoComplete="off">
+                <input
+                type="text"
+                name="numero"
+                required="required"
+                maxLength={500}
+                className='form-control'
+                onChange={handleInputChange} />
                 <button type="submit" className="btn btn-primary boton-accion">
                     Continuar
                 </button>
