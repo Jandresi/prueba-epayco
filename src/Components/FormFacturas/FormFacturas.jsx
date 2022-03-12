@@ -8,11 +8,9 @@ const FormFacturas = () => {
     const dispatch = useDispatch();
     const getToken = useSelector(store => store.token.token)
 
-    const[cambio, setCambio] = useState(false);
-
     const[datos, setDatos] = useState({
         numero: '',
-        token: 'token'
+        token: ''
     });
     
     useEffect(() => {
@@ -30,7 +28,6 @@ const FormFacturas = () => {
             [event.target.name]: event.target.value,
             token: getToken
         });
-        setCambio(true);
     }
 
 
