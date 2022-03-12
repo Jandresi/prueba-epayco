@@ -6,19 +6,26 @@ import {
   Link
 } from "react-router-dom";
 import Busqueda from './Components/Busqueda/Busqueda';
+import { Provider } from 'react-redux';
+import generateStore from './Redux/store';
 
 function App() {
+
+  const store = generateStore();
+
   return (
-    <Router>
-      <main className='main'>
-        <section className='box'>
-          <Busqueda />
-        </section>
+    <Provider store={store}>
+      <Router>
+        <main className='main'>
+          <section className='box'>
+            <Busqueda />
+          </section>
 
-        <footer></footer>
+          <footer></footer>
 
-      </main>
-    </Router>
+        </main>
+      </Router>
+    </Provider>
   );
 }
 

@@ -1,24 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getTokenAccion } from "../../Redux/epaycoDucks";
 import './FormFacturas.css'
 
-const FormFacturas = (props) => {
+const FormFacturas = () => {
 
-    const [token, setToken] = React.useState('')
+    const dispatch = useDispatch();
 
-    const getToken = async(event) => {
+    const submit = (event) =>{
         event.preventDefault();
-        const api = await fetch("https://apify.epayco.co/login/mail", {
-            method: "post",
-            headers: {
-                Authorization: "Basic " + btoa("pruebafront@payco.co:pruebafront$2020"),
-            },
-            mode: "cors",
-            cache: "default",
-            });
-        const token = await api.json().then(res => res.token);
-        setToken(token);
-        console.log(token);
+        dispatch(getTokenAccion());
     }
+
 
   return (
     <div className="formulario">
@@ -27,9 +20,11 @@ const FormFacturas = (props) => {
         </div>
         <div>
             <label className="label">Número de identificación del usuario</label>
-            <form method="post" onSubmit={getToken}>
+            <form method="post" onSubmit={submit}>
                 <input type="text" name="id" id="id" maxLength={500} className='form-control' />
-                <button type="submit" className="btn btn-primary boton-accion">Continuar</button>
+                <button type="submit" className="btn btn-primary boton-accion">
+                    Continuar
+                </button>
             </form>
         </div>
     </div>

@@ -12,7 +12,6 @@ const Busqueda = () => {
         setChecked(bol)
     }
 
-
     return (
         <div className="contenedor">
             <div className="botones">
