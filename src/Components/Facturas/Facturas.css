@@ -1,0 +1,41 @@
+.contenedorFacturas {
+    width: 1000px;
+    min-height: max-content;
+    border-radius: 6px;
+    background-color: #7a1f11;
+}
+
+.headerFacturas {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+    height: 50px;
+    background-color: #fefefe;
+    border-radius: 6px;
+}
+
+#botonAtras {
+    border: none;
+    background-color: transparent;
+}
+
+#tituloListado {
+    margin: 0 auto;
+    color: #a09c9c;
+}
+
+.cuerpo {
+    padding: 0 20px;
+}
+
+.factura {
+    padding: 20px;
+}
+
+.datos {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}

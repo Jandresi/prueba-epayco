@@ -13,7 +13,7 @@ const Busqueda = () => {
     }
 
     return (
-        <div className="contenedor">
+        <div className="contenedorBusqueda">
             <div className="botones">
                 <div className={checked ? 'boton selected' : 'boton'} onClick={() => check(true)}>
                     <button className='opcion'>Ingrese sus datos</button>

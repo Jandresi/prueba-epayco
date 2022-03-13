@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTokenAccion } from "../../Redux/tokenDucks";
 import { getConfigAccion } from "../../Redux/configDucks";
 import { getFacturaAccion } from "../../Redux/facturaDucks";
+import { useNavigate } from "react-router-dom";
 
 const FormFacturas = () => {
     
     const dispatch = useDispatch();
     const getToken = useSelector(store => store.token.token)
+    const navigate = useNavigate();
 
     const[datos, setDatos] = useState({
         numero: '',
@@ -23,6 +25,7 @@ const FormFacturas = () => {
         event.preventDefault();
         dispatch(getConfigAccion(getToken, datos.numero));
         dispatch(getFacturaAccion(getToken, datos.numero));
+        navigate('/facturas')
     }
 
     const handleInputChange = (event) => {

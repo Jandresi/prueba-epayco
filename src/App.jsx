@@ -8,6 +8,7 @@ import {
 import Busqueda from './Components/Busqueda/Busqueda';
 import { Provider } from 'react-redux';
 import generateStore from './Redux/store';
+import Facturas from './Components/Facturas/Facturas';
 
 function App() {
 
@@ -18,7 +19,10 @@ function App() {
       <Router>
         <main className='main'>
           <section className='box'>
-            <Busqueda />
+            <Routes>
+              <Route path="/facturas" element={<Facturas />} />
+              <Route path="/" exact element={<Busqueda />} />
+            </Routes>
           </section>
 
           <footer></footer>
