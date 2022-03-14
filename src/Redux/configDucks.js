@@ -16,13 +16,12 @@ export default function configReducer(state = tokenInicial, action) {
 }
 
 // Acciones
-export const getConfigAccion = (tok, doc) => async(dispatch, getState) => {
+export const getConfigAccion = (tok) => async(dispatch, getState) => {
     try {
         const config = await fetch("https://apify.epayco.co/billcollect/proyect/config/consult", {
             method: "post",
             body: JSON.stringify({
-                "projectId":29,
-                "document":doc
+                "projectId":29
             }),
             headers: {
                 Authorization: "Bearer " + tok,

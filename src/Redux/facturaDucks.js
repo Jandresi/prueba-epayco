@@ -22,7 +22,6 @@ export const getFacturaAccion = (tok, doc) => async(dispatch, getState) => {
             method: "post",
             body: JSON.stringify({
                 "projectId":29,
-                "grantUserId":tok,
                 "document":doc
             }),
             headers: {
