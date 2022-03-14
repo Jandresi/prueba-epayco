@@ -1,16 +1,17 @@
 .contenedorFacturas {
-    width: 1000px;
+    width: 70em;
     min-height: max-content;
-    border-radius: 6px;
+    border-radius: 12px;
     background-color: #7a1f11;
+    /* overflow: hidden; */
 }
 
 .headerFacturas {
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 0 10px;
-    height: 50px;
+    padding: 15px;
     background-color: #fefefe;
     border-radius: 6px;
 }
@@ -21,16 +22,19 @@
 }
 
 #tituloListado {
-    margin: 0 auto;
+    margin: auto;
     color: #a09c9c;
 }
 
 .cuerpo {
-    padding: 0 20px;
+    padding: 10px 20px;
 }
 
 .factura {
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
 }
 
 .datos {
@@ -38,4 +42,62 @@
     align-items: center;
     text-align: center;
     justify-content: space-around;
+    background-color: #fefefe;
+    margin-right: 20px;
+    padding: 15px 0;
+    border-radius: 12px;
+}
+
+.boton-pagar {
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    background: #40a8e6;
+    position: relative;
+    padding: 1em;
+    font-size: 1.5em;
+    color: #fefefe;
+}
+
+.valor {
+    color: #a09c9c;
+    font-size: 1.1em;
+}
+
+.titulo-dato {
+    font-size: 1.2em;
+}
+
+@media(max-width: 1099px) {
+    .contenedorFacturas {
+        max-width: 60em;
+    }
+}
+
+@media(max-width: 870px) {
+    .contenedorFacturas {
+        max-width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-flow: column wrap;
+    }
+
+    .factura {
+        flex-flow: column wrap;
+        max-width: 100%;
+    }
+
+    .datos {
+        flex-flow: column wrap;
+        max-width: 100%;
+    }
+
+    .boton-pagar {
+        margin: 10px 0;
+        width: 80%;
+        padding: 0.3em 1em;
+    }
 }
